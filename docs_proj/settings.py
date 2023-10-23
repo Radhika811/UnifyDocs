@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure--ela3!0&x#2$y!e*wmedl0fh-+4c8d(xt+$85ibv@x(25s3@(j
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+AUTH_USER_MODEL = 'docs_app.User'
 
 # Application definition
 
@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'docs_app',
-    'rest_framework'
+    'rest_framework',
+    'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [
