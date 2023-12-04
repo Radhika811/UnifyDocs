@@ -7,7 +7,7 @@ class User(AbstractUser):
         ('n', 'normal_user')
     ]
     
-    enrollment = models.BigIntegerField(unique = True)
+    enrollment = models.BigIntegerField(unique = True, null=True)
     email = models.EmailField(null = True)
     phone_no = models.CharField(max_length=12, null=True)
     gender = models.CharField(max_length=60)
