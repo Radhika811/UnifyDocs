@@ -108,7 +108,7 @@ def auth_token(request):
             token = Token.objects.create(user=new_user)
             print(token.key)
             
-        return redirect('http://127.0.0.1:8000/dashboard')
+        return redirect('http://localhost:3000/dashboard')
     
     print("Request failed with status code: ", response.status_code)
     return HttpResponse("Request failed due to status code : ", response.status_code)
