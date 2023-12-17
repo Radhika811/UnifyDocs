@@ -4,7 +4,8 @@ from .login import Log_in
 from .auth import auth_token
 from .dashboard import landing
 from .user import UserViewSet
-from .documents import DocumentViewSet
+from .documents import document_list
+from .documents import document_detail
 from .groups import GroupViewSet
 from .tags import TagViewSet
 # from . import config

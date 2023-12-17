@@ -1,13 +1,12 @@
 from django.db import models
 from .user import User
-from .tags import Tags
 from .groups import Groups
-from ckeditor.fields import RichTextField
     
 class Document(models.Model):
     number = models.IntegerField()
     name = models.CharField()
-    content = RichTextField()
+    description = models.TextField()
+    content = models.TextField(null = True, blank = True)
     date_created = models.DateTimeField()
     date_modified = models.DateTimeField()
     creator = models.ForeignKey(User, on_delete=models.CASCADE, related_name="creator")
