@@ -1,0 +1,14 @@
+FROM python:3.11.6
+
+WORKDIR /UnifyDocs
+
+COPY requirements.txt /UnifyDocs/
+
+RUN pip install --upgrade pip \
+    && pip install -r requirements.txt
+
+COPY . /UnifyDocs/
+
+EXPOSE 8000
+
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

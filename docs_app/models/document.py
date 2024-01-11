@@ -10,6 +10,3 @@ class Document(models.Model):
     date_created = models.DateTimeField()
     date_modified = models.DateTimeField()
     creator = models.ForeignKey(User, on_delete=models.CASCADE, related_name="creator")
-    viewer_group = models.ForeignKey(Groups, on_delete=models.CASCADE, related_name="viewer_group")
-    editor_group = models.ForeignKey(Groups, on_delete=models.CASCADE, related_name="editor_group")
-    moderator_group = models.ForeignKey(Groups, on_delete=models.CASCADE, related_name="moderator_group")

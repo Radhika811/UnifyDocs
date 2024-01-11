@@ -50,3 +50,17 @@ def document_detail(request, pk):
     elif request.method == 'POST':
         serializer = DocumentSerializer(document)
         return Response(serializer.data)
+
+@csrf_exempt  # Disable CSRF protection for this view
+@api_view(['GET', 'POST', 'PUT', 'DELETE'])
+def document_detail_created(request, created):
+    if request.method == 'GET':
+        documents = Document.objects.filter(creator = created)
+        serializer = DocumentSerializer(documents, many=True)
+        return Response(serializer.data)
+    elif request.method == 'POST':
+        serializer = DocumentSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=201)
+        return Response(serializer.errors, status=400)

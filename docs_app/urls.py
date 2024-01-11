@@ -17,6 +17,7 @@ urlpatterns = [
     path('dashboard', views.landing),
     path('documents/', views.document_list, name='document-list'),
     path('documents/<int:pk>/', views.document_detail, name='document-detail'),
+    path('documents/created/<int:created>', views.document_detail_created, name='document-detail-created')
 
     # Custom views for document_list and document_detail
     

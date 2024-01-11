@@ -6,6 +6,7 @@ from .dashboard import landing
 from .user import UserViewSet
 from .documents import document_list
 from .documents import document_detail
+from .documents import document_detail_created
 from .groups import GroupViewSet
 from .tags import TagViewSet
 # from . import config
